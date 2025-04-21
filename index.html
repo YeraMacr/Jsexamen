@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Adivinar el Número</title>
+</head>
+<body>
+    <script>
+        let numeroSecreto = Math.floor(Math.random() * 100) + 1; 
+        let intentos = 5; 
+        alert("¡Bienvenido al Juego de Adivinar el Número! Tienes 5 intentos para adivinar un número entre 1 y 100.");
+
+        while (intentos > 0) {
+            let numeroUsuario = parseInt(prompt("Ingresa un número entre 1 y 100:"));
+            if (numeroUsuario === numeroSecreto) {
+                alert("¡Felicidades! Adivinaste el número.");
+                break;
+            } else if (numeroUsuario > numeroSecreto) {
+                alert("El número es más bajo.");
+            } else {
+                alert("El número es más alto.");
+            }
+            intentos--;
+            if (intentos > 0) {
+                alert("Te quedan " + intentos + " intentos.");
+            } else {
+                alert("¡Se acabaron los intentos! El número secreto era " + numeroSecreto);
+            }
+        }
+    </script>
+</body>
+</html>
